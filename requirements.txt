@@ -1,0 +1,4 @@
+requests>=2.31,<3
+Pillow>=10.1,<13
+ttkbootstrap>=1.10,<2
+pyinstaller>=6.12,<7

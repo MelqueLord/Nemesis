@@ -1,0 +1,26 @@
+# Este diretório contém cópias históricas, ferramentas e dados de validação.
+# Por segurança, somente os arquivos explicitamente liberados abaixo entram no repositório.
+*
+
+!.gitignore
+!.gitattributes
+!README_NEMESIS.md
+!requirements.txt
+!nemesis.py
+!nemesis_core.py
+!nemesis_audit.py
+!nemesis_job.py
+!nemesis.spec
+!runtime_hook_tkinter.py
+!version_info.txt
+!logo2.png
+!logo2.ico
+
+!tests/
+tests/*
+!tests/*.py
+
+!release/
+release/*
+!release/Nemesis-1.6.0-Windows-Server-x64.exe
+!release/Nemesis-1.6.0-Windows-Server-x64.sha256.txt
