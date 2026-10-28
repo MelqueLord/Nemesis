@@ -5,6 +5,7 @@
 !.gitignore
 !.gitattributes
 !README_NEMESIS.md
+!README.md
 !requirements.txt
 !nemesis.py
 !nemesis_core.py
