@@ -7,6 +7,21 @@ from nemesis_audit import gerar_relatorios_auditoria, montar_resumo_final
 
 
 class NemesisAuditTests(unittest.TestCase):
+    def test_relatorio_mostra_mapa_e_zip_recuperado(self):
+        with tempfile.TemporaryDirectory() as pasta:
+            estado = {"paths": {"root": pasta}, "status": "concluido", "products": {"Fotos": ["link"]},
+                      "link_status": {"link": "concluido"},
+                      "integrity_summary": {"integridade_extracao_confirmada": True, "http_totalmente_verificado": True},
+                      "extraction_checks": {"link": {"recuperacao_isolada": True, "nome_produto": "Fotos",
+                          "mapa": "mapa.json", "sha256_mapa": "MAPHASH", "zip_preservado": "origem.zip", "sha256_zip": "ZIPHASH"}}}
+            gerar_relatorios_auditoria(estado)
+            texto = (Path(pasta) / "relatorio_auditoria.txt").read_text(encoding="utf-8")
+            self.assertIn("ZIPs RECUPERADOS EM PASTAS ISOLADAS: 1", texto)
+            self.assertIn("mapa.json", texto)
+            self.assertIn("MAPHASH", texto)
+            self.assertIn("origem.zip", texto)
+            self.assertIn("ZIPHASH", texto)
+
     def test_relatorio_indica_pendencias_e_orientacoes_sem_expor_link(self):
         with tempfile.TemporaryDirectory() as pasta:
             url = "https://apple.example/pacote?token=segredo"

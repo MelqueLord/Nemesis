@@ -48,10 +48,10 @@ Cada produto é extraído em uma pasta própria com o título informado pelo
 manifesto da Apple, como `iCloud Reminders`, `Safari Browsing History` e
 `Sign in with Apple`. O nome original do pacote (por exemplo,
 `2354676-ICLOUDREMINDERS-41489874.zip.gpg`) é mantido durante download e
-descriptografia. Dentro da pasta do produto, a estrutura e todos os nomes do ZIP
-continuam exatamente como vieram da Apple. Pacotes em várias partes do mesmo
-produto são reunidos na mesma pasta e passam pelas mesmas verificações de
-colisão e integridade.
+descriptografia. Pacotes em várias partes do mesmo produto são reunidos na
+mesma pasta e passam pelas mesmas verificações de colisão e integridade. Quando
+um pacote precisa de recuperação isolada, seus nomes originais são registrados
+no mapa descrito abaixo.
 
 ZIPs exportados pela Apple podem conter caminhos iniciados por `/`, caracteres
 proibidos no Windows ou estruturas maiores que o limite tradicional de caminho.
